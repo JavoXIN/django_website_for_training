@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from vatam import views     #men qoshdim(0323)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.first_page),    #men qoshdim(0323)
+    path('thanks_bunarsani_orgartirsamhamishlidi/', views.thanks_page, name='thanks_page'),
 ]

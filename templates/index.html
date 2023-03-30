@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>New Python in HTML page</h1>
-{{a}}
-<h1>{{text}}</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %} Title from Index.ht {% endblock %}
+{% load static %}
+{% block content %}
+<h2>Data from Index file</h2>
+
+<img src="{% static 'img\1.jpg' %}" height="300">
+
+{% include 'index_old.html' %}
+{% endblock %}
+
+<!--man qoshdim 0329/ 09:28pm-->

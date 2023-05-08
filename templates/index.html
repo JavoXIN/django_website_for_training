@@ -1,12 +1,36 @@
 {% extends 'base.html' %}
-{% block title %} Title from Index.ht {% endblock %}
 {% load static %}
-{% block content %}
-<h2>Data from Index file</h2>
+{% block index %}
+	<!-- карусель -->
+	{% include 'carusel.html' %}
+  	<!-- Карточки -->
+	{% include 'price.html' %}
+  	<!-- форма -->
+  	<section>
+  		<div class="container class_form">
+  			<h1 class="text-3">For Ordering</h1>
+  			<div class="row justify-content-center">
+  			<form action="{% url 'thanks_page' %}" method="POST" style="width: 50%;">
+				{% csrf_token %}
+			  <div class="form-group row">
+			    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label><br>
+				  {{ form.name }}
+			    <div class="">
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label><br>
 
-<img src="{% static 'img\1.jpg' %}" height="300">
+				  {{ form.phone}}
+			    <div class="">
+			    </div>
+			  </div>
+			  <div style="float: right;" class="form-group row">
+			      <button type="submit" class="btn btn-success">Send to Order</button>
+			  </div>
+			</form>
+			</div>
+  		</div>
+  	</section>
 
-{% include 'index_old.html' %}
 {% endblock %}
-
-<!--man qoshdim 0329/ 09:28pm-->

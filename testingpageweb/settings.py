@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
+    'telebot.apps.TelebotConfig',
+    'price.apps.PriceConfig',
+    'cms2.apps.Cms2Config',
     'vatam.apps.VatamConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -105,24 +107,45 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us' #'ru-RU'
+LANGUAGE_CODE = 'en-us'   # 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-#STATICFILES_DIRS = [BASE_DIR / "static", "C:/Djangoweb/testingpageweb_root/testingpageweb/static/",]
-
+'''
+  # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), BASE_DIR / "static", 
+  "C:/Djangoweb/testingpageweb_root/testingpageweb/static/"]
+  # STATICFILES_DIRS = []
+'''
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "testingpageweb/static/"),
+]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+'''
+# STATIC_ROOT=os.path.join(BASE_DIR, '/static/')
+# STATIC_URL = 'C:/Djangoweb/testingpageweb_root/testingpageweb/static/'
+
+
+# STATIC_ROOT = os.path.join(BASE_DIR, "C:/Djangoweb/testingpageweb_root/testingpageweb/static/")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# STATICFILES_DIRS = [BASE_DIR / "C:/Djangoweb/testingpageweb_root/testingpageweb/static", ]
+
+'''

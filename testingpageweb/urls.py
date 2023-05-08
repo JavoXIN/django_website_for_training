@@ -16,9 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from vatam import views     #men qoshdim(0323)
+from django.conf.urls.static import static
+from django.conf import settings
+# from .settings import debug
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', views.first_page),    #men qoshdim(0323)
+#     path('thanks_bunarsani_orgartirsamhamishlidi/', views.thanks_page, name='thanks_page'),
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.first_page),    #men qoshdim(0323)
-    path('thanks_bunarsani_orgartirsamhamishlidi/', views.thanks_page, name='thanks_page'),
-]
+    path('thanks_bunarsani_orgartirsamhamishlidi/', views.thanks_page, name='thanks_page')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# if debug == True:
+#     urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# else:
+#     urlpatterns

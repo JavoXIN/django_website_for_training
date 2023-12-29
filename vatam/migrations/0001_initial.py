@@ -18,6 +18,8 @@ class Migration(migrations.Migration):
                 ('order_dt', models.DateTimeField(auto_now=True)),
                 ('order_name', models.CharField(max_length=200)),
                 ('order_phone', models.CharField(max_length=200)),
+                ('order_day', models.DateField()), #men qoshdim 0523, max_length=200 BUNI OB TASHLASANG HAM BOLADI
+                ('order_time', models.TimeField()), #men qoshdim 0523 max_length=200 BUNI OB TASHLASANG HAM BOLADI
             ],
         ),
     ]

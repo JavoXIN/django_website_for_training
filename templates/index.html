@@ -8,16 +8,36 @@
   	<!-- форма -->
   	<section>
   		<div class="container class_form">
-  			<h1 class="text-3">For Ordering</h1>
+  			<h1 class="text-3">CONTACT for ORDER</h1>
   			<div class="row justify-content-center">
-  			<form action="{% url 'thanks_page' %}" method="POST" style="width: 50%;">
+<!--  		<form action="{% url 'thanks_page' %}" method="POST" style="width: 50%;"> shunaqa edi ozi, man buni ozgartirdim pastdigiga-->
+			<form action="{% url 'thanks_page' %}" method="POST" style="width: 50%;">
 				{% csrf_token %}
+
+
+			<label for="start">Select date:</label>
+			  <input type="date" id="start" name="date" value={{min_day_value}} min={{min_day_value}} max="2024-01-01">
+
+
+			<label for="start">Select an available time:</label>
+			  <select name="time" id="select" class="form-select form-select-lg mb-3" aria-label=".form-select-sm example">
+				  {% for time in all_time %}
+				  <option value="{{ time }}">
+					  {{time}}
+				  </option>
+				  {% endfor %}
+			  </select>
+
+
+
+
 			  <div class="form-group row">
 			    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label><br>
 				  {{ form.name }}
 			    <div class="">
 			    </div>
 			  </div>
+
 			  <div class="form-group row">
 			    <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label><br>
 
@@ -25,6 +45,7 @@
 			    <div class="">
 			    </div>
 			  </div>
+
 			  <div style="float: right;" class="form-group row">
 			      <button type="submit" class="btn btn-success">Send to Order</button>
 			  </div>

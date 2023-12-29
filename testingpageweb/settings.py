@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
     'telebot.apps.TelebotConfig',
     'price.apps.PriceConfig',
     'cms2.apps.Cms2Config',
@@ -109,13 +110,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'   # 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'        #ya dobavil 05.24 UTC to Asia/Seoul
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False      #ya dobavil 05.24 true to false
 
 
 # Static files (CSS, JavaScript, Images)
